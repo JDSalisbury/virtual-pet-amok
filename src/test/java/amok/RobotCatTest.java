@@ -1,15 +1,13 @@
 package amok;
 
-
-
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 
 import org.junit.Test;
 
-public class RobotDogTest {
+public class RobotCatTest {
 
-	public static final String DEFAULT_NAME = "Astro";
+	public static final String DEFAULT_NAME = "Jonesy";
 	private String name = DEFAULT_NAME;
 
 	public static final String DEFAULT_DESCRIPTION = "It is alright";
@@ -27,22 +25,16 @@ public class RobotDogTest {
 	public static final int DEFAULT_HAPPINESS = 10;
 	private int happiness = DEFAULT_HAPPINESS;
 
-	RobotDog underTest = new RobotDog(name, description, oil, health, boredom, happiness);
-	
 	@Test
-	public void shouldGetOiled() {
-		
+	public void shouldGetOilForRobotCat() {
+		Robot underTest = new RobotCat(name, description, oil, health, boredom, happiness);
 		underTest.getOiled();
 		assertThat(underTest.getOiled(), is(10));
 	}
-	
 	@Test
-	public void shouldGoOnWalk() {
-		underTest.goOnWalk();
-		assertThat(underTest.getBoredom(), is(9));
-		assertThat(underTest.getHappiness(), is(11));
-		assertThat(underTest.getHealth(), is(11));
-		
+	public void shouldGetName() {
+		Robot underTest = new RobotCat(name, description, oil, health, boredom, happiness);
+		underTest.getName();
+		assertThat(underTest.getName(), is("Jonesy"));
 	}
-
 }
