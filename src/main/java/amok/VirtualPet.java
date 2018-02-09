@@ -5,11 +5,12 @@ public abstract class VirtualPet {
 	protected String description;
 	protected int health;
 	protected int boredom;
+	protected int happiness;
 
 	public String getName() {
 		return name;
 	}
-	
+
 	public String getDescription() {
 		return description;
 	}
@@ -21,10 +22,16 @@ public abstract class VirtualPet {
 	public int getBoredom() {
 		return boredom;
 	}
-	
+
+	public int getHappiness() {
+		return happiness;
+	}
+
 	public void play() {
 		int fun = 1;
 		boredom -= fun;
+		happiness += fun;
+		health += fun;
 	}
 
 }

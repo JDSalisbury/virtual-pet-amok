@@ -17,24 +17,22 @@ public abstract class Organic extends VirtualPet {
 	public int getPotty() {
 		return potty;
 	}
-	
 
 	public void feed() {
-		int eat =1;
+		int eat = 1;
 		food += eat;
+		potty += eat;
 	}
 
 	public void water() {
 		int drank = 1;
 		drink += drank;
+		potty += drank;
 	}
 
 	public void bathroom() {
 		int bathroom = 1;
 		potty -= bathroom;
-		
 	}
 
-	
-	
 }

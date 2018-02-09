@@ -24,13 +24,16 @@ public class DogTest {
 
 	public static final int DEFAULT_POTTY = 10;
 	private int potty = DEFAULT_POTTY;
+	
+	public static final int DEFAULT_HAPPINESS = 10;
+	private int happiness = DEFAULT_HAPPINESS;
 
-	Dog underTest = new Dog("", description, health, food, drink, boredom, potty);
+	Dog underTest = new Dog("", description, health, food, drink, boredom, potty, happiness);
 	
 
 	@Test
 	public void shouldGetFoodFromOrganic() {
-		Organic underTest = new Dog("", description, health, food, drink, boredom, potty);
+		Organic underTest = new Dog("", description, health, food, drink, boredom, potty, happiness);
 		int check = underTest.getFood();
 		assertThat(check, is(10));
 	}
@@ -42,60 +45,69 @@ public class DogTest {
 
 	@Test
 	public void shouldGetPottyFromOrganic() {
-		Organic underTest = new Dog("", description, health, food, drink, boredom, potty);
+		Organic underTest = new Dog("", description, health, food, drink, boredom, potty, happiness);
 		assertThat(underTest.getPotty(), is(10));
 	}
 
 	@Test
 	public void shouldGetHealthFromVirtualPet() {
-		VirtualPet underTest = new Dog("", description, health, food, drink, boredom, potty);
+		VirtualPet underTest = new Dog("", description, health, food, drink, boredom, potty, happiness);
 		int check = underTest.getHealth();
 		assertThat(check, is(10));
 	}
 
 	@Test
 	public void shouldGetBoredomFromVirtualPet() {
-		VirtualPet underTest = new Dog("", description, health, food, drink, boredom, potty);
+		VirtualPet underTest = new Dog("", description, health, food, drink, boredom, potty, happiness);
 		assertThat(underTest.getBoredom(), is(10));
 	}
 
 	@Test
 	public void shouldGetNameFromVirtualPet() {
-		VirtualPet underTest = new Dog("", description, health, food, drink, boredom, potty);
+		VirtualPet underTest = new Dog("", description, health, food, drink, boredom, potty, happiness);
 		assertThat(underTest.getName(), is(""));
 	}
 
 	@Test
 	public void shouldGetDescriptionFromVirtualPet() {
-		VirtualPet underTest = new Dog("", description, health, food, drink, boredom, potty);
+		VirtualPet underTest = new Dog("", description, health, food, drink, boredom, potty, happiness);
 		assertThat(underTest.getDescription(), is("It is alright"));
 	}
 	
 	@Test
 	public void shouldEat() {
-		Organic underTest = new Dog("", description, health, food, drink, boredom, potty);
+		Organic underTest = new Dog("", description, health, food, drink, boredom, potty, happiness);
 		underTest.feed();
 		assertThat(underTest.getFood(), is(11));
 	}
 	
 	@Test
 	public void shouldDrink() {
-		Organic underTest = new Dog("", description, health, food, drink, boredom, potty);
+		Organic underTest = new Dog("", description, health, food, drink, boredom, potty, happiness);
 		underTest.water();
 		assertThat(underTest.getDrink(), is(11));
 	}
 	
 	@Test
 	public void shouldGoToRestroom() {
-		Organic underTest = new Dog("", description, health, food, drink, boredom, potty);
+		Organic underTest = new Dog("", description, health, food, drink, boredom, potty, happiness);
 		underTest.bathroom();
 		assertThat(underTest.getPotty(), is(9));
 	}
 	
 	@Test
 	public void shouldPlay() {
-		VirtualPet underTest = new Dog("", description, health, food, drink, boredom, potty);
 		underTest.play();
 		assertThat(underTest.getBoredom(), is(9));
 	}
+	
+	@Test
+	public void shouldGoOnWalk() {
+		underTest.goOnWalk();
+		assertThat(underTest.getBoredom(),is(9));
+		assertThat(underTest.getHealth(),is(11));
+		assertThat(underTest.getPotty(), is(9));
+		assertThat(underTest.getHappiness(), is(11));
+		}
+	
 }
