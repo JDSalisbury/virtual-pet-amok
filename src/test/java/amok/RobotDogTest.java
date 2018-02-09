@@ -1,6 +1,7 @@
 package amok;
 
 import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertThat;
 
 import org.junit.Test;
@@ -27,7 +28,7 @@ public class RobotDogTest {
 
 	@Test
 	public void shouldGetOiled() {
-		Robot underTest = new RoboDog(name, description, oil, health, boredom, happiness);
+		RoboDog underTest = new RoboDog(name, description, oil, health, boredom, happiness);
 		underTest.getOiled();
 		assertThat(underTest.getOiled(), is(10));
 	}
