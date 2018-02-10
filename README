@@ -1,0 +1,40 @@
+introduce ways to track:
+	cage cleanliness for organic dogs
+	shelter litter box cleanliness for organic cats
+	oil/maintenance level for robot animals
+
+	Encapsulate all instance variables.
+	Assign appropriate visibility modifiers to methods only used internally by a class or within a class hierarchy.
+
+	create a model that allows for dogs and cats, either of which may be robotic
+
+	introduce an attribute (instance variable) representing overall health that is updated as a result of other attributes moving in a negative or positive direction, influencing happiness
+
+	oiling robotic pets
+	walking dogs, decreasing the likelihood that organic dogs will soil their cages, while increasing happiness in all dogs
+
+	modify the tick method to return a value indicating the amount of waste a pet creates, which should contribute to either:
+		amount of waste in the litter box
+		amount of waste in an individual dog cage
+
+
+
+
+
+do not allow:
+	feeding/watering robotic pets
+	oiling organic pets
+
+
+introduce methods that allow for:
+	oiling/maintaining all robotic pets
+	cleaning dog cages
+	emptying the litterbox
+modify existing methods to only feed/water pets that are not robotic	
+
+
+add options to:
+	walk all dogs
+	clean dog cages
+	clean the shelter litterbox
+	oil all robotic pets
