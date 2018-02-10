@@ -91,6 +91,15 @@ public class PetShelter {
 		}
 	}
 	
+	public void soilLitterBox() {
+		for (VirtualPet pet : getAllVirtualPets()) {
+			if(pet instanceof Cat) {
+			((Organic) pet).bathroom();
+			}
+		}
+	}
+	
+	
 	
 
 }
