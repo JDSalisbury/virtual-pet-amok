@@ -28,4 +28,11 @@ public class Dog extends Organic implements Walkable {
 		happiness += walking;
 	}
 
+	@Override
+	public String toString() {
+		return "" + name + "\t\t|"+ health + "\t|" + happiness + "\t\t|" + food + "\t|" + drink + "\t|" + boredom + "\t|" + potty + "\t\t-" + description;
+	}
+	
+	
+	
 }

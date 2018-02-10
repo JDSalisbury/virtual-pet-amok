@@ -27,13 +27,17 @@ public class PetShelter {
 
 	public void feedAll() {
 		for (VirtualPet pet : getAllVirtualPets()) {
-			((Organic) pet).feed();
+			if(pet instanceof Organic) {
+				((Organic) pet).feed();
+			}
 		}
 	}
 
 	public void waterAll() {
 		for (VirtualPet pet : getAllVirtualPets()) {
+			if(pet instanceof Organic) {
 			((Organic) pet).water();
+			}
 		}
 	}
 
@@ -45,7 +49,9 @@ public class PetShelter {
 
 	public void walkAll() {
 		for (VirtualPet pet : getAllVirtualPets()) {
-			((Walkable) pet).goOnWalk();
+			if(pet instanceof Walkable) {
+				((Walkable) pet).goOnWalk();
+			}
 		}
 
 	}
@@ -61,11 +67,30 @@ public class PetShelter {
 		shelter.get(name).play();
 
 	}
+	
+	public void howIsEverybodysHappiness() {
+		for(VirtualPet pet : getAllVirtualPets()) {
+			pet.getHappiness();
+			
+		}
+	}
 
 	public void oilAll() {
 		for (VirtualPet pet : getAllVirtualPets()) {
+			if(pet instanceof Robot) {
 			((Robot) pet).oil();
+			}
 		}
 	}
+	
+	public void soilCage() {
+		for (VirtualPet pet : getAllVirtualPets()) {
+			if(pet instanceof Dog) {
+			((Organic) pet).bathroom();
+			}
+		}
+	}
+	
+	
 
 }

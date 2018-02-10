@@ -1,8 +1,9 @@
 package amok;
 
 import java.util.Scanner;
+import java.util.Map.Entry;
 
-import shelter.VirtualPet;
+
 
 
 
@@ -11,7 +12,7 @@ public class VirtualPetShelterApp {
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
 		PetShelter shelterPets = new PetShelter();
-		
+		Cages shelterCages = new Cages(0);
 		
 		VirtualPet sonic = new Dog("Sonic","quikc to run");
 		VirtualPet tails = new Cat("Tails", "hovers around Sonic");
@@ -27,6 +28,17 @@ public class VirtualPetShelterApp {
 		int turn = 0;
 		int day = 0;
 		do {
+			System.out.println("");
+			System.out.println("The VirtualPets.");
+			System.out.println("________________________________________________________________________________________");
+			System.out.println("Name\t\t|Health\t|Happiness\t|Hunger\t|Thirst\t|Boredom|Waste\t|Oil");
+
+			for (Entry<String, VirtualPet> entry : shelterPets.shelter.entrySet()) {
+				System.out.println(entry.getValue());
+			}
+			System.out.println("________________________________________________________________________________________");
+			System.out.println(shelterCages);
+			System.out.println("");
 			turn++;
 			System.out.println("What would you like to do today?");
 			
@@ -39,7 +51,9 @@ public class VirtualPetShelterApp {
 			System.out.println("7. Empty all Litter boxes?");
 			System.out.println("8. Adopt a pet?");
 			System.out.println("9. Admit a pet?");
-			System.out.println("10. Finally actually quit VirtualPet for real this time.");
+			System.out.println("10. Would you like to check on all the pets happiness?");
+			System.out.println("11. Throw a party for all the pets?");
+			System.out.println("12. Finally actually quit VirtualPet for real this time.");
 			
 			move = input.nextLine();
 			
@@ -68,9 +82,9 @@ public class VirtualPetShelterApp {
 				shelterPets.walkAll();
 			}
 			
-//			if(move.equals("7")) {
-//				clean all cages
-//			}
+			if(move.equals("7")) {
+				shelterCages.cleanCage();
+			}
 //			
 //			if(move.equals("8")) {
 //				empty all litterboxes
@@ -126,10 +140,33 @@ public class VirtualPetShelterApp {
 				}
 			}
 			
-		}while (!(move.equals("10")));
+			
+			if(move.equals("10")) {
+				for (VirtualPet entry : shelterPets.getAllVirtualPets()) {
+					System.out.println(entry.getName() +" "+ entry.getHappiness());
+				}
+			}
+			
+			
+			if(move.equals("11")) {
+				shelterPets.funAll();
+			}
+			
+			if (turn % 2 == 0) {
+				shelterCages.soilCage();
+				shelterPets.tickAll();
+				;
+				day++;
+				System.out.println("");
+				System.out.println("You have been here for " + day + " days, thanks for volunteering your time with us at");
+			}
+			
+		}while (!(move.equals("12")));
 		
 		System.out.println("About time...");
 		System.exit(0);
+		
+		input.close();
 		
 	}
 

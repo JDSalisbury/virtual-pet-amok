@@ -22,6 +22,12 @@ public class RobotDog extends Robot implements Walkable {
 		boredom -= walking;
 		health += walking;
 		happiness += walking;
+		oil -= walking;
 	}
 
+	@Override
+	public String toString() {
+		return "" + name + "\t\t|" + health + "\t|" + happiness + "\t\t"+"\t"+"\t|" + boredom + "\t\t|" + oil + "\t-" + description;
+	}
+	
 }

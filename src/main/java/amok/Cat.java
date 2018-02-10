@@ -19,4 +19,11 @@ public class Cat extends Organic {
 		this.description = description;
 	}
 
+	@Override
+	public String toString() {
+		return "" + name + "\t\t|"+ health + "\t|" + happiness + "\t\t|" + food + "\t|" + drink + "\t|" + boredom + "\t|" + potty + "\t\t-" + description;
+	}
+	
+	
+	
 }
