@@ -34,4 +34,10 @@ public abstract class VirtualPet {
 		health += fun;
 	}
 
+	public void tick() {
+		int ticker = 1;
+		health += ticker;
+
+	}
+
 }

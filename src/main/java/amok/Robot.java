@@ -8,4 +8,9 @@ public abstract class Robot extends VirtualPet {
 		return oil;
 	}
 
+	public void oil() {
+		int penzoil = 1;
+		oil += penzoil;
+	}
+
 }

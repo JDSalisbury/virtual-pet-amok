@@ -31,6 +31,7 @@ public class RobotCatTest {
 		underTest.getOiled();
 		assertThat(underTest.getOiled(), is(10));
 	}
+
 	@Test
 	public void shouldGetName() {
 		Robot underTest = new RobotCat(name, description, oil, health, boredom, happiness);

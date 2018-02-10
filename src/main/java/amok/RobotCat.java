@@ -10,7 +10,7 @@ public class RobotCat extends Robot {
 		this.boredom = boredom;
 		this.happiness = happiness;
 	}
-	
+
 	public RobotCat(String name, String description) {
 		this.name = name;
 		this.description = description;

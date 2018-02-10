@@ -24,18 +24,15 @@ public class CatTest {
 
 	public static final int DEFAULT_POTTY = 10;
 	private int potty = DEFAULT_POTTY;
-	
+
 	public static final int DEFAULT_HAPPINESS = 10;
 	private int happiness = DEFAULT_HAPPINESS;
 
-	
-	
 	@Test
 	public void shouldMakeOrganicCat() {
 		Organic underTest = new Cat("", description, health, food, drink, boredom, potty, happiness);
 		underTest.getName();
 		assertThat(underTest.getName(), is(""));
 	}
-	
-	
+
 }
