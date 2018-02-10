@@ -2,8 +2,6 @@ package amok;
 
 import java.util.Scanner;
 
-import static org.hamcrest.CoreMatchers.instanceOf;
-
 import java.util.Map.Entry;
 
 public class VirtualPetShelterApp {
@@ -85,13 +83,13 @@ public class VirtualPetShelterApp {
 				shelterPets.walkAll();
 			}
 
-			if (move.equals("7")) {
+			if (move.equals("6")) {
 				shelterCages.cleanCage();
 			}
-			
-			 if(move.equals("8")) {
-				 shelterBox.cleanLitterBox();
-			 }
+
+			if (move.equals("7")) {
+				shelterBox.cleanLitterBox();
+			}
 
 			if (move.equals("8")) {
 				System.out.println("Who would you like to adopt?");

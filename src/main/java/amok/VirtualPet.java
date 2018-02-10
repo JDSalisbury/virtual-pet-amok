@@ -24,21 +24,21 @@ public abstract class VirtualPet {
 	}
 
 	public String getHappiness() {
-		if(happiness <= 0) {
+		if (happiness <= 0) {
 			return "wants to die";
 		}
-		
-		if(happiness <=3) {
+
+		if (happiness <= 3) {
 			return "feels alive but isnt thrilled about it";
 		}
-		
-		if(happiness <=6) {
+
+		if (happiness <= 6) {
 			return "three meals and a place to sleep, cant complain i guess";
 		}
-		
-		if(happiness <=9)
+
+		if (happiness <= 9)
 			return " its a great day to be in a Virtual Shelter!";
-		
+
 		return "I want to live in the Shelter forever!";
 	}
 
@@ -47,7 +47,7 @@ public abstract class VirtualPet {
 		boredom -= fun;
 		happiness += fun;
 		health += fun;
-		
+
 	}
 
 	public void tick() {

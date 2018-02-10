@@ -27,7 +27,7 @@ public class PetShelter {
 
 	public void feedAll() {
 		for (VirtualPet pet : getAllVirtualPets()) {
-			if(pet instanceof Organic) {
+			if (pet instanceof Organic) {
 				((Organic) pet).feed();
 			}
 		}
@@ -35,8 +35,8 @@ public class PetShelter {
 
 	public void waterAll() {
 		for (VirtualPet pet : getAllVirtualPets()) {
-			if(pet instanceof Organic) {
-			((Organic) pet).water();
+			if (pet instanceof Organic) {
+				((Organic) pet).water();
 			}
 		}
 	}
@@ -49,7 +49,7 @@ public class PetShelter {
 
 	public void walkAll() {
 		for (VirtualPet pet : getAllVirtualPets()) {
-			if(pet instanceof Walkable) {
+			if (pet instanceof Walkable) {
 				((Walkable) pet).goOnWalk();
 			}
 		}
@@ -67,39 +67,36 @@ public class PetShelter {
 		shelter.get(name).play();
 
 	}
-	
+
 	public void howIsEverybodysHappiness() {
-		for(VirtualPet pet : getAllVirtualPets()) {
+		for (VirtualPet pet : getAllVirtualPets()) {
 			pet.getHappiness();
-			
+
 		}
 	}
 
 	public void oilAll() {
 		for (VirtualPet pet : getAllVirtualPets()) {
-			if(pet instanceof Robot) {
-			((Robot) pet).oil();
+			if (pet instanceof Robot) {
+				((Robot) pet).oil();
 			}
 		}
 	}
-	
+
 	public void soilCage() {
 		for (VirtualPet pet : getAllVirtualPets()) {
-			if(pet instanceof Dog) {
-			((Organic) pet).bathroom();
+			if (pet instanceof Dog) {
+				((Organic) pet).bathroom();
 			}
 		}
 	}
-	
+
 	public void soilLitterBox() {
 		for (VirtualPet pet : getAllVirtualPets()) {
-			if(pet instanceof Cat) {
-			((Organic) pet).bathroom();
+			if (pet instanceof Cat) {
+				((Organic) pet).bathroom();
 			}
 		}
 	}
-	
-	
-	
 
 }
