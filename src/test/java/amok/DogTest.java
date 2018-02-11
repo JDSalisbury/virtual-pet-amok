@@ -3,6 +3,7 @@ package amok;
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertThat;
 
+import org.junit.Before;
 import org.junit.Test;
 
 public class DogTest {
@@ -28,11 +29,15 @@ public class DogTest {
 	public static final int DEFAULT_HAPPINESS = 10;
 	private int happiness = DEFAULT_HAPPINESS;
 
-	Dog underTest = new Dog("", description, health, food, drink, boredom, potty, happiness);
+	Dog underTest;
+
+	@Before
+	public void before() {
+		underTest = new Dog("", description, health, food, drink, boredom, potty, happiness);
+	}
 
 	@Test
 	public void shouldGetFoodFromOrganic() {
-		Organic underTest = new Dog("", description, health, food, drink, boredom, potty, happiness);
 		int check = underTest.getFood();
 		assertThat(check, is(10));
 	}
@@ -44,13 +49,11 @@ public class DogTest {
 
 	@Test
 	public void shouldGetPottyFromOrganic() {
-		Organic underTest = new Dog("", description, health, food, drink, boredom, potty, happiness);
 		assertThat(underTest.getPotty(), is(10));
 	}
 
 	@Test
 	public void shouldGetHealthFromVirtualPet() {
-		VirtualPet underTest = new Dog("", description, health, food, drink, boredom, potty, happiness);
 		int check = underTest.getHealth();
 		assertThat(check, is(10));
 	}
@@ -106,7 +109,6 @@ public class DogTest {
 		assertThat(underTest.getBoredom(), is(9));
 		assertThat(underTest.getHealth(), is(11));
 		assertThat(underTest.getPotty(), is(9));
-		assertThat(underTest.getHappiness(), is(11));
 	}
 
 }

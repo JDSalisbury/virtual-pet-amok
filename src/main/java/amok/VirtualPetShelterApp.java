@@ -12,7 +12,7 @@ public class VirtualPetShelterApp {
 		Cages shelterCages = new Cages(0);
 		LitterBox shelterBox = new LitterBox(0);
 
-		VirtualPet sonic = new Dog("Sonic", "quikc to run");
+		VirtualPet sonic = new Dog("Sonic", "quick to run");
 		VirtualPet tails = new Cat("Tails", "hovers around Sonic");
 		VirtualPet rush = new RobotDog("Rush", "a mega-mans best friend");
 		VirtualPet liger = new RobotCat("Liger", "gives Zero cares about you");
@@ -30,7 +30,7 @@ public class VirtualPetShelterApp {
 			System.out.println("The VirtualPets.");
 			System.out.println(
 					"________________________________________________________________________________________");
-			System.out.println("Name\t\t|Health\t|Happiness\t|Hunger\t|Thirst\t|Boredom|Waste\t|Oil");
+			System.out.println("Name\t\t|Health\t|Happiness\t|Food\t|Water\t|Boredom|Waste\t|Oil");
 
 			for (Entry<String, VirtualPet> entry : shelterPets.shelter.entrySet()) {
 				System.out.println(entry.getValue());
@@ -158,8 +158,6 @@ public class VirtualPetShelterApp {
 							shelterPets.soilCage();
 							shelterCages.soilCage();
 						}
-				}
-				for (VirtualPet entry : shelterPets.getAllVirtualPets()) {
 					if (entry instanceof Cat)
 						if (((Cat) entry).getPotty() > 0) {
 							shelterPets.soilLitterBox();

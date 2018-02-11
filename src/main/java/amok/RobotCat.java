@@ -16,12 +16,17 @@ public class RobotCat extends Robot {
 		this.description = description;
 	}
 
-	
 	@Override
 	public String toString() {
-		return "" + name + "\t\t|" + health + "\t|" + happiness + "\t\t"+"\t"+"\t|" + boredom + "\t\t|" + oil + "\t-" + description;
+		return "" + name + "\t\t|" + health + "\t|" + happiness + "\t\t" + "\t" + "\t|" + boredom + "\t\t|" + oil
+				+ "\t-" + description;
 	}
-	
-	
-	
+
+	@Override
+	public void tick() {
+		super.tick();
+		int ticks = 1;
+		oil += ticks;
+	}
+
 }
