@@ -100,7 +100,7 @@ public class DogTest {
 	@Test
 	public void shouldPlay() {
 		underTest.play();
-		assertThat(underTest.getBoredom(), is(9));
+		assertThat(underTest.getBoredom(), is(7));
 	}
 
 	@Test

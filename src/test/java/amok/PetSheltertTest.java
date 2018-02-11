@@ -62,7 +62,7 @@ public class PetSheltertTest {
 		shelterTest.admitPet(dog);
 		shelterTest.admitPet(roboDog);
 		shelterTest.funAll();
-		assertThat(cat.getBoredom(), is(-1));
+		assertThat(cat.getBoredom(), is(-3));
 	}
 
 	@Test
@@ -70,32 +70,22 @@ public class PetSheltertTest {
 		shelterTest.admitPet(dog);
 		shelterTest.admitPet(roboDog);
 		shelterTest.walkAll();
-		assertThat(dog.getHappiness(), is(1));
-		assertThat(roboDog.getHappiness(), is(1));
+		assertThat(dog.getBoredom(), is(-1));
+		assertThat(roboDog.getBoredom(), is(-1));
 	}
 
 	@Test
 	public void shouldOilAllRobots() {
 		shelterTest.admitPet(roboDog);
 		shelterTest.oilAll();
-		assertThat(roboDog.getOiled(), is(1));
-	}
-
-	@Test
-	public void shouldTickAll() {
-		shelterTest.admitPet(cat);
-		shelterTest.admitPet(dog);
-		shelterTest.admitPet(roboDog);
-		shelterTest.tickAll();
-		assertThat(dog.getHealth(), is(1));
-		assertThat(cat.getHealth(), is(1));
-		assertThat(roboDog.getHealth(), is(1));
+		assertThat(roboDog.getOiled(), is(0));
 	}
 
 	@Test
 	public void shouldPlayWithOnePet() {
 		shelterTest.admitPet(dog);
 		shelterTest.playWithAPet("Bill");
-		assertThat(dog.getBoredom(), is(-3));
+		assertThat(dog.getBoredom(), is(-7));
 	}
+
 }

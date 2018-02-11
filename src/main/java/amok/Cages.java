@@ -5,7 +5,7 @@ public class Cages {
 	private int soilLvl;
 
 	public Cages(int soilLvl) {
-		this.soilLvl=soilLvl;
+		this.soilLvl = soilLvl;
 	}
 
 	public int cleanCage() {

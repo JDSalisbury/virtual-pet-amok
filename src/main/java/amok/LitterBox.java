@@ -5,7 +5,7 @@ public class LitterBox {
 	private int soilLvl;
 
 	public LitterBox(int soilLvl) {
-		this.soilLvl=soilLvl;
+		this.soilLvl = soilLvl;
 	}
 
 	public int cleanLitterBox() {
@@ -26,5 +26,5 @@ public class LitterBox {
 	public String toString() {
 		return "LitterBox waste lvl: " + soilLvl;
 	}
-	
+
 }

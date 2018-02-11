@@ -38,7 +38,6 @@ public class RobotDogTest {
 	public void shouldGoOnWalk() {
 		underTest.goOnWalk();
 		assertThat(underTest.getBoredom(), is(9));
-		assertThat(underTest.getHappiness(), is(11));
 		assertThat(underTest.getHealth(), is(11));
 
 	}
